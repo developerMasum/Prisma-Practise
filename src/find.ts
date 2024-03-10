@@ -25,6 +25,18 @@ const main = async () => {
   });
 
   console.log({ findUnique });
+
+
+  const findUniqueSelect = await prisma.post.findUniqueOrThrow({
+    where: {
+      id: 8,
+    },
+    select:{
+        title:true
+    }
+  });
+
+  console.log({ findUniqueSelect });
 };
 
 main();
